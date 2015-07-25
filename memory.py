@@ -31,16 +31,3 @@ class Memory:
 
 if __name__ == '__main__':
     mem = Memory()
-    address = 2
-    value = -1
-    mem.set_value(address, value, size=1)
-    print mem.get_value(address, signed=True, size=1)
-    print mem.get_value(address, signed=True, size=2)
-    print map(hex, list(mem.bank[:8]))
-    print hex(mem.get_value(address-2, size=4))
-    # we can output using the xxd way!!!
-    mem.bank[:4] = [0x12, 0x34, 0x56, 0x78]
-    print map(hex, list(mem.bank[:8]))
-    mem.bank[:4] = [0xff, 0xfe, 0xfd, 1]
-    print mem.get_value(address, signed=True, size=1)
-    print mem.get_value(address, signed=True, size=2)

@@ -63,3 +63,9 @@ class CPU:
 if __name__ == '__main__':
     cpu = CPU()
     print(cpu)
+    cpu.ax = -1
+    cpu.bl = 0xffff
+    cpu.flags = 0xff
+    print(cpu.OF)
+    print(cpu)
+
